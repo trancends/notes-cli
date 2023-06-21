@@ -1,6 +1,6 @@
 import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
-import { findNotes, getAllNotes, newNote } from "./notes.js";
+import { findNotes, getAllNotes, newNote, removeNote } from "./notes.js";
 
 const listNotes = (notes) => {
   notes.forEach(({ id, content, tags }) => {
@@ -68,7 +68,10 @@ yargs(hideBin(process.argv))
         description: "The id of the note to remove",
       });
     },
-    async (argv) => {}
+    async (argv) => {
+      const id = await removeNote(argv.id);
+      console.log(`id: ${id} is removed`);
+    }
   )
 
   .command(
