@@ -8,7 +8,7 @@
     "note": "./index.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
   "keywords": [],
   "author": "",
@@ -16,5 +16,8 @@
   "dependencies": {
     "link": "^1.5.1",
     "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "jest": "^29.5.0"
   }
 }
